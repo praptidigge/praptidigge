@@ -1,0 +1,230 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arbotek', sans-serif;
+    color: #d4b59f;
+    background-color: #000000;
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+/* Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3e0cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #a25b41;
+}
+
+.preloader-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.loader-percentage {
+    font-family: 'Aboreto', cursive;
+    font-size: 3em;
+    margin-right: 20px;
+    color: #a25b41;
+}
+
+.loader-divider {
+    width: 3px;
+    height: 0; /* Start from 0 height to grow from the bottom */
+    background-color: #a25b41;
+    transition: height 0.3s ease; /* Smooth growth effect */
+    position: relative; /* Anchors the loader */
+    bottom: 0; /* Ensures it grows from bottom to top */
+    margin: 0 auto; /* Centered between percentage and portfolio text */
+}
+
+.loader-vertical-text {
+    writing-mode: vertical-rl;
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 4.6rem;
+    color: #a25b41;
+}
+
+/* Styles for Side Decorators */
+.side-decorator {
+    position: fixed;
+    top: 75%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between dot and line */
+    z-index: 10;
+}
+
+.left-decorator {
+    top: 20%;       /* Adjust this percentage to position vertically */
+    left: 20px;     /* Distance from the left edge */
+}
+
+/* Right side decoration */
+.right-decorator {
+    top: 70%;       /* Adjust this percentage to position vertically */
+    right: 30px;    /* Distance from the right edge */
+}
+
+/* Line Style */
+.line {
+    width: 2px; /* Thickness of the line */
+    height: 130px; /* Length of the line */
+    background-color: #F1E0CB; /* Match color from the reference */
+}
+
+/* Dot Style */
+.dot {
+    width: 10px; /* Diameter of the dot */
+    height: 10px; /* Diameter of the dot */
+    background-color: #F1E0CB; /* Same color as line */
+    border-radius: 50%; /* Make it circular */
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 19px;
+}
+
+.navbar a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #d4b59f;
+    text-transform: uppercase;
+}
+
+.logo {
+    font-size: 26px; /* Larger font size for the logo */
+    color: #F1E0CB; /* Different color for logo text */
+}
+
+.logo-secondary {
+    color: #F1E0CB; /* Different color or style for 'digge' if needed */
+    font-size: 26px; /* Adjust font size for the secondary part */
+    font-style: italic;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110vh; /* Increased height to allow more space for hero text */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Hero Image Stack */
+.hero-image-stack {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 20px; /* Add padding to bring images closer to text */
+}
+
+.hero-image {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+
+/* Image Animations */
+.content.loaded .hero-image:nth-child(1) {
+    opacity: 1;
+    transform: scale(1) translate(-10px, -10px) rotate(-5deg);
+}
+
+.content.loaded .hero-image:nth-child(2) {
+    opacity: 1;
+    transform: scale(1) translate(10px, 10px) rotate(5deg);
+}
+
+.content.loaded .hero-image:nth-child(3) {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* Updated Hero Text Positioning with Alignment */
+.hero-text {
+    position: relative;
+    top: -150px; /* Move text up to overlap with image stack */
+    font-size: 7vw;
+    line-height: 1;
+    color: #CFA999;
+    margin-top: -30px; /* Negative margin to force overlap with image stack */
+    z-index: 5; /* Ensure text appears above images */
+}
+
+/* Styling for Intro and Name Lines */
+.intro-line {
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    text-align: left; /* Align "HELLO I'M" to the left */
+    margin-left: 80%; /* Adjust left margin as needed */
+    margin-bottom: 0.2em;
+    transform: translateX(100px); 
+}
+
+.name-line {
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-align: center; /* Center-align "PRAPTI DIGGE" */
+    transform: translateX(90px);
+}
+
+/* Hero Text */
+.hero-text h1 {
+    font-family: 'Arbotek', sans-serif;
+    font-weight: 500;
+    font-size: 8vw;
+    letter-spacing: 4px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #CFA999;
+    z-index: 10;
+    mix-blend-mode: difference;
+    margin: 0;
+}
+
+.footer-corner {
+    position: fixed;
+    bottom: 20px; /* Distance from bottom */
+    right: 20px; /* Distance from right */
+    z-index: 100; /* Ensure it appears on top */
+    margin-right: 30px;
+}
+
+.footer-text {
+    font-family: 'Arbotek', sans-serif; /* Same font as the logo */
+    font-size: 26px; /* Match logo font size */
+    color: #F1E0CB; /* Match logo color */
+}

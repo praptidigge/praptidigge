@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arbotek', sans-serif;
+    color: #f1e0cb;
+    background-color: #f1e0cb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 19px;
+    z-index: 10;
+}
+
+.navbar a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #a25b41;
+    text-transform: uppercase;
+}
+
+.logo {
+    font-size: 26px;
+    color: #a25b41;
+}
+
+.logo-secondary {
+    color: #a25b41;
+    font-size: 26px;
+    font-style: italic;
+}
+
+.projects-main {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: #a25b41;
+    width: 100%;
+}
+
+.side-decorator {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.left-decorator {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.right-decorator {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.line {
+    width: 2px;
+    height: 130px;
+    background-color: #a25b41;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #a25b41;
+    border-radius: 50%;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 80vh;
+    text-align: left;
+    gap: 0.1rem;
+    padding-left: 400px;
+    position: relative;
+    width: 100vw;
+    margin-top: 3.8rem; /* Adjust this value to shift the titles downward */
+}
+
+.project-item-scroll {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    padding: 10px 0;
+}
+
+.project-item {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 1.2em;
+    color: #a25b41;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.project-item-scroll::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    transform: translateY(-50%);
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 1.5em;
+    color: #a25b41;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+    align-items: center; /* Center vertically */
+    padding-left: 0; /* Remove padding */
+}
+
+.project-item-scroll:hover::before {
+    animation: scrollText 15s linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translate(-100%, -50%);
+    }
+    100% {
+        transform: translate(100%, -50%);
+    }
+}
