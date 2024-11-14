@@ -1,0 +1,131 @@
+* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arbotek', sans-serif;
+    color: #d4b59f;
+    background-color: #f1e0cb;
+    overflow-y: scroll;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 45vw;
+    height: 120vh;
+    background-color: #d4b59f;
+    position: fixed;
+    left: 15%;
+    top: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Vertical Scrolling Text Outside Sidebar */
+.vertical-scrolling-text {
+    position: fixed;
+    left: 2%; /* Position it outside the sidebar */
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Arbotek', sans-serif;
+    font-size: 2rem;
+    color: #a25b41;
+    writing-mode: vertical-rl;
+    animation: scrollVertical 15s linear infinite;
+    white-space: nowrap;
+    z-index: 10; /* Bring it above the sidebar */
+}
+
+@keyframes scrollVertical {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Main Content */
+.main-content {
+    width: 70vw;
+    margin-left: 30vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Text Wrapper */
+.background-text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5; /* Bring it above the sidebar */
+    overflow: hidden;
+}
+
+/* Background Text Bar */
+.background-text-bar {
+    position: absolute;
+    width: 100%;
+    height: 80%; /* Adjust height as needed */
+    background-color: rgba(212, 181, 159, 0.5);
+    z-index: -1;
+}
+
+/* Background Text with Horizontal Scrolling */
+.background-text {
+    font-family: 'Arbotek', sans-serif;
+    font-size: 6rem;
+    color: rgba(162, 91, 65, 0.1); /* Faded text color */
+    text-transform: uppercase;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: scrollHorizontal 20s linear infinite;
+}
+
+@keyframes scrollHorizontal {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Collage Image in Bottom Right Corner */
+.image-wrapper {
+    position: fixed;
+    bottom: 2%; /* Position at the bottom */
+    right: 2%;  /* Position at the right */
+    z-index: 6;
+}
+.collage-image {
+    width: 70vw; /* Adjust size as needed */
+    border: none;
+    background: none;
+    box-shadow: none;
+    transition: transform 0.3s;
+}
+.collage-image:hover {
+    transform: scale(1.05);
+}
+
+#about-me-txt {position: absolute; top: 120px; left: -140px; color: #9f5434; width: 420px; font-size: 20px; }
+#about-txt-2 {margin: 10px 0;}
+
+/* Responsive Text Size for Smaller Screens */
+@media (max-width: 768px) {
+    .background-text {
+        font-size:5rem;
+    }
+    .collage-image {
+        width: 100vw; /* Adjusted size for smaller screens */
+    }
+    .sidebar {
+        width: 25vw;
+        left: 7%;
+    }
+}

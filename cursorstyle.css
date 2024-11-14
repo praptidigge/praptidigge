@@ -1,0 +1,44 @@
+/* Hide the default cursor */
+body {
+    cursor: none !important;
+}
+
+/* Main Cursor Styling */
+#cursor {
+    width: 20px;                   /* Width of main cursor */
+    height: 20px;                  /* Height of main cursor */
+    border-radius: 50%;            /* Make it circular */
+    background-color: rgba(217, 188, 176, 0.8); /* Custom color */
+    position: absolute;
+    pointer-events: none;          /* Prevent interference with other elements */
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, background-color 0.2s ease; /* Smooth follow */
+    z-index: 3;                    /* Ensure it stays above other elements */
+}
+
+/* Inner Dot for Cursor */
+#cursor-dot {
+    width: 8px;                    /* Width of inner dot */
+    height: 8px;                   /* Height of inner dot */
+    border-radius: 50%;            /* Circular shape */
+    background-color: #d9bcb0;     /* Lighter color for inner dot */
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 4;                    /* Place above main cursor */
+}
+
+/* Cursor Hover Effect for Links */
+a:hover ~ #cursor {
+    transform: scale(1.5);          /* Enlarge the cursor on link hover */
+    background-color: #b98072;      /* Change color on link hover */
+}
+
+a:hover ~ #cursor-dot {
+    background-color: #d4a494;      /* Change inner dot color on link hover */
+}
+
+/* Custom Cursor Animation on Hover */
+a:hover ~ #cursor, a:hover ~ #cursor-dot {
+    transition: transform 0.15s ease, background-color 0.15s ease; /* Smooth transition on hover */
+}

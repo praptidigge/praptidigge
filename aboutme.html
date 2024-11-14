@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="aboutme.css"> <!-- Link to your CSS file -->
+    <link href="https://use.typekit.net/rpz4fto.css" rel="stylesheet"> <!-- Adobe Kit link for Arbotek -->
+    <style>
+        /* Link to Arbotek font via Google Fonts or host locally if needed */
+        @import url('https://use.typekit.net/rpz4fto.css');
+    </style>
+		<script>
+			let i = 0;
+			let txt1 = "I'm a second-year undergraduate student at FLAME University, majoring in Experience Design with a minor in Marketing. Passionate about the creative field, I thrive on innovation and am driven by change, always looking for ways to apply my skills in impactful and meaningful ways.";
+			let txt2 = "I'm excited to continue evolving in this field and embrace further opportunities to drive positive change.";
+			let speed = 50;
+			function typeWriter(){
+				if (i < txt1.length) {
+					document.getElementById("about-txt-1").innerHTML += txt1.charAt(i);
+					i++;
+					setTimeout(typeWriter, speed);
+				}else{
+					i = 0;
+					typeWriter2()
+				}				
+			}
+			function typeWriter2(){
+				if (i < txt2.length) {
+					document.getElementById("about-txt-2").innerHTML += txt2.charAt(i);
+					i++;
+					setTimeout(typeWriter2, speed);
+				}else{
+				}				
+			}
+			window.addEventListener('load', (e) => {
+				typeWriter();
+			});
+		</script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar content here if needed -->
+        </div>
+
+        <!-- Vertical Scrolling Text Outside Sidebar -->
+        <div class="vertical-scrolling-text">
+            ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Wrapper for Horizontal Scrolling Background Text and Bar -->
+            <div class="background-text-wrapper">
+                <div class="background-text-bar"></div> <!-- Colored bar behind the text -->
+                <div class="background-text">
+                    ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME
+                </div>
+            </div>
+						<div id="about-me-txt">
+							<p id="about-txt-1"></p>
+							<p id="about-txt-2"></p>
+						</div>
+            <!-- Collage Image Wrapper -->
+            <div class="image-wrapper">
+                <img src="images/collage image about me.png" alt="About Me Collage" class="collage-image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

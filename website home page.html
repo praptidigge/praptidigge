@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prapti's Portfolio</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none; /* Hide default cursor */
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5c7b5;
+            color: #3d3d3d;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #cfa999;
+        }
+        .branding h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            color: #f1e0cb;
+        }
+        .branding h1 span {
+            font-weight: 100;
+            font-style: italic;
+            color: #f1e0cb;
+        }
+        nav a {
+            text-decoration: none;
+            color: #5a3835;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0 15px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        nav a:hover {
+            color: #f1e0cb;
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Main Horizontal Scroll Section */
+        .scroll-section {
+            display: flex;
+            width: 200vw; /* Twice the viewport width for horizontal scroll */
+            height: 100vh;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+        .content-section {
+            width: 100vw;
+            height: 100%;
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Colored Background Layers */
+        .color-layer-1, .color-layer-2, .color-layer-3 {
+            position: absolute;
+            width: 33.33%;
+            height: 100%;
+            top: 0;
+        }
+        .color-layer-1 { background-color: #cfa999; left: 0; }
+        .color-layer-2 { background-color: #d98168; left: 33.33%; }
+        .color-layer-3 { background-color: #f1e0cb; left: 66.66%; }
+
+        /* Portfolio Text Styling */
+        .portfolio-text {
+            font-family: 'Playfair Display', serif;
+            position: absolute;
+            top: 2%;
+            left: 3%;
+            font-size: 15rem;
+            color: rgba(43, 14, 2, 0.1);
+            font-weight: bold;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        /* Image Styling */
+        .image-wrapper {
+            position: relative;
+            z-index: 2;
+            width: 100vw;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .image-wrapper img {
+            width: 115%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Cursor Animation */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(43, 14, 2, 0.8);
+            position: absolute;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 3; /* Ensure cursor is above other elements */
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="branding">
+            <h1>Prapti <span>digge</span></h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="about me css code.html">About Me</a>
+            <a href="#projects">My Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Horizontal Scroll Section -->
+    <div class="scroll-section">
+        <!-- Content Section 1 -->
+        <div class="content-section">
+            <!-- Color Layers -->
+            <div class="color-layer-1"></div>
+            <div class="color-layer-2"></div>
+            <div class="color-layer-3"></div>
+
+            <!-- Portfolio Text -->
+            <div class="portfolio-text">
+                Portfolio
+            </div>
+
+            <!-- Main Image -->
+            <div class="image-wrapper">
+                <img src="Prapti's Portfolio.png" alt="Portfolio Cover Image">
+            </div>
+        </div>
+
+        <!-- Content Section 2 -->
+        <div class="content-section">
+            <!-- Color Layers -->
+            <div class="color-layer-1"></div>
+            <div class="color-layer-2"></div>
+            <div class="color-layer-3"></div>
+
+            <!-- Additional Text for Section 2 -->
+            <div class="portfolio-text">
+                Gallery
+            </div>
+
+            <!-- Second Image -->
+            <div class="image-wrapper">
+                <img src="AnotherImage.png" alt="Second Portfolio Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Cursor Animation -->
+    <script>
+        const cursor = document.getElementById('cursor');
+
+        // Follow mouse movement
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.left = e.clientX + 'px';
+        });
+
+        // Expand on hover over links and highlight them
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(1.5)';
+                link.style.color = '#f1e0cb';
+                link.style.textShadow = '0px 0px 5px rgba(255, 255, 255, 0.8)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                link.style.color = '#5a3835';
+                link.style.textShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

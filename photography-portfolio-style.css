@@ -1,0 +1,46 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Background color to fill gaps */
+}
+
+/* Portfolio Container */
+.portfolio {
+    display: flex;
+    flex-direction: row;
+    animation: scrollHorizontal 36s linear infinite;
+    animation-delay: 3s; /* Delay of 3 seconds before scrolling starts */
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100vw;
+    height: auto; /* Maintain natural aspect ratio */
+    object-fit: cover;
+    display: block;
+}
+
+/* Animation for Horizontal Scrolling */
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-600vw); /* Adjust for all 6 images */
+    }
+}

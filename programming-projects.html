@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Projects</title>
+    <link rel="stylesheet" href="programming-project-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <link href="https://use.typekit.net/rpz4fto.css" rel="stylesheet">
+</head>
+<body>
+    <canvas id="bubbleCanvas"></canvas>
+
+    <div class="projects-container">
+        <!-- Project Card 1: Scratch Project with Modal -->
+        <div class="project-card brown">
+            <h2 class="project-title">INTERACTIVE GAME WITH <br>/SCRATCH</h2>
+            <img src="images/Interactive game with scratch.png" alt="DinoDash 2 player game" class="project-image">
+            <button class="view-button" onclick="openModal('scratchModal')">VIEW</button>
+        </div>
+
+        <!-- Project Card 2: Creative Coding with P5.js -->
+        <div class="project-card beige">
+            <div class="content-wrapper">
+                <!-- Open p5.js modal -->
+                <button class="view-button top-view" onclick="openModal('p5Modal')">VIEW</button>
+
+                <img src="images/Creative coding with p5js.jpg" alt="Creative Coding with P5.js" class="project-image">
+            </div>
+            <h2 class="project-title center-text">CREATIVE CODING <br>WITH P5.JS</h2>
+        </div>
+
+        <!-- Project Card 3: Problem Solving with Python (PDF) -->
+        <div class="project-card light-brown">
+            <h2 class="project-title">PROBLEM <br>SOLVING WITH <br>PYTHON</h2>
+            <img src="images/problem solving with python.jpg" alt="Problem Solving with Python" class="project-image">
+            <a href="PYTHON CODE.pdf" target="_blank">
+                <button class="view-button">VIEW</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Structure for Scratch Project -->
+    <div id="scratchModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('scratchModal')">&times;</span>
+            <iframe src="https://scratch.mit.edu/projects/1096168571/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div id="p5Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal('p5Modal')">&times;</span>
+            <iframe src="https://editor.p5js.org/prapti.digge/full/S2fUYkhfC"></iframe>
+        </div>
+    </div>
+
+    <script src="programming-project-animation.js"></script>
+    <script src="modal.js"></script>
+</body>
+</html>

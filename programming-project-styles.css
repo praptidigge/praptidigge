@@ -1,0 +1,204 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    background-color: #1e1e1e; /* Dark background color */
+    font-family: 'Arbotek', 'Aboreto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #FFFFFF;
+    overflow-x: hidden; /* Prevents horizontal scroll if image overflows */
+}
+
+
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    position: relative;
+    right: 13vw;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+    justify-content:flex-start;
+    align-items: center;
+    
+}
+
+/* Project Card */
+.project-card {
+    width: 260px;
+    min-height: 450px; /* Increased height */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px; /* Adjust padding as needed for consistency */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Increased speed */
+}
+
+/* Background colors for each card */
+.brown {
+    background-color: #5d3b2e;
+}
+
+.beige {
+    background-color: #f1e0cb;
+}
+
+.light-brown {
+    background-color: #cfa999;
+}
+
+/* Project Title Styling */
+.project-title {
+    font-weight: 470; /* Reduced font weight for lighter appearance */
+    font-size: 1.7rem;
+    margin: 10px 0;
+}
+
+/* Specific colors for each project title */
+.brown .project-title {
+    color: #f1e0cb; /* Light color for contrast with brown */
+}
+
+.beige .project-title {
+    color: #cfa999; /* Dark brown for contrast with beige */
+}
+
+.light-brown .project-title {
+    color: #5d3b2e; /* Darker color for contrast with light brown */
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Top-view button specific positioning */
+.top-view {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds subtle shadow to images */
+}
+
+/* Specific styling for images */
+.brown .project-image {
+    border: 2px solid #f7d9c4; /* Matching border color */
+}
+
+.beige .project-image {
+    border: 2px solid #5d3b2e;
+    margin-top: 70px;
+}
+
+.light-brown .project-image {
+    border: 2px solid #333333;
+}
+
+/* View Button Styling */
+.view-button {
+    font-family: 'Arbotek', 'Aboreto', sans-serif; /* Matches the project title font */
+    background-color: transparent;
+    border: 3px solid #FFFFFF;
+    border-radius: 26px;
+    color: #FFFFFF;
+    padding: 5px 15px;
+    font-size: 17px;
+    font-weight: 480;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+/* Specific styles for view button colors */
+.brown .view-button {
+    border-color: #f1e0cb;
+    color: #f1e0cb;
+}
+
+.beige .view-button {
+    border-color: #cfa999;
+    color: #cfa999;
+}
+
+.light-brown .view-button {
+    border-color: #5d3b2e;
+    color: #5d3b2e;
+}
+
+/* View button hover effect */
+.view-button:hover {
+    background-color: #FFFFFF;
+    color: #1e1e1e; /* Dark color on hover */
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
